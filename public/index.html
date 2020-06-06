@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="./static/css/index_style.css">
+    <title>Welcome</title>
+</head>
+
+<body>
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <div class="fadeIn first">
+                <img src="./static/img/doge.png" id="icon" alt="User Icon" />
+            </div>
+            <form action="chat.html">
+                <input type="text" id="username" class="fadeIn second" name="username" placeholder="Username" required>
+                <input type="text" id="roomid" class="fadeIn third" name="roomid" placeholder="Room Id" required>
+                <div class="row">
+                    <div class="col-md-5">
+                        <input type="submit" class="fadeIn fourth" value="Join">
+                    </div>
+                    <div class="col-md-5">
+                        <input type="button" class="fadeIn fourth" value="Random" id="btn-random">
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</body>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    document.getElementById("btn-random").addEventListener("click", (e) => {
+        document.getElementById("roomid").value = makeid(5);
+    });
+
+    function makeid(length) {
+        var result = '';
+        var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var charactersLength = characters.length;
+        for (var i = 0; i < length; i++) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result;
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Simple Video Chat App</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./static/css/chat_style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo-container">
+        <img src="./static/img/doge.png" alt="doge logo" class="logo-img" />
+        <h1 class="logo-text">
+          Chat <span class="logo-highlight">App</span>
+        </h1>
+      </div>
+    </header>
+    <div class="content-container">
+      <div class="active-users-panel" id="active-user-container">
+        <h3 class="panel-title">Active Chat:</h3>
+        <!-- start -->
+        <div class="chat-messages">
+
+        </div>
+        <div class="chat-form-container">
+          <form id="chat-form">
+            <input id="msg" type="text" placeholder="Enter Message" required autocomplete="off" />
+            <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
+          </form>
+        </div>
+        <!--Chat end-->
+      </div>
+      <div class="video-chat-container">
+        <h2 class="talk-info" id="talking-with-info">
+
+        </h2>
+        <div class="video-container" id='video-container'>
+          <video muted class="local-video" id="local-video"></video>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="./static/js/bundle.js"></script>
+</body>
+
+</html>
